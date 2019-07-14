@@ -1,0 +1,20 @@
+.cadre {
+    display: flex;
+     flex-wrap: wrap;
+  
+}
+.cadre1{
+    height: 350px;
+    margin-bottom: 20px;
+}
+.btn2{
+  
+    background-color:white;
+}
+.btn2:hover{
+    color:blue;
+    background-color: gainsboro
+}
+.clickable{
+    cursor: pointer;
+}

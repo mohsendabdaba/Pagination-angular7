@@ -1,0 +1,51 @@
+
+<div class="container">
+  <div class="card">
+    <div class="card-header"> About Component </div>
+     <div class="card-body">
+     
+        <form  #f="ngForm" (ngSubmit)="onSearch(f.value)">
+            <div class="form-group">
+              <label class="control-label">Mot clé :</label>
+              <input required="" name="motCle"[style.margin]="'20px'" ngModel type=text  
+              placeholder="message"  [(ngModel)]="motCle">
+              <button [disabled]="!f.valid" type="submit"class="btn btn-primary" [style.margin]="'10px'">
+               chercher
+              </button>
+             </div>
+        </form>
+           
+        <div  class=" cadre" >
+
+         <div *ngFor="let p of pagePhotos?.hits"  class="col-md-3 "  >
+              <div class="card cadre1">
+                  <div class="card-header">
+                    <img class="rounded-circle" src="{{p.userImageURL}}" width="50" height="50">
+                     {{p.tags}} 
+                    </div>
+                   <div class="card-body">
+                     <div>
+                       <p>User:{{p.user}}</p>
+                     </div>
+                    <img src={{p.previewURL}}>
+
+                   </div>
+              </div>
+           </div>
+
+        </div>
+
+        <div class="row">
+         <ul class="nav nav-pills">
+           <li [ngClass]="{'active':currentPage==(i+1)}" class="clickable"*ngFor="let page of pages; let i=index " >
+             <a (click)="goToPage(i)"[style.margin-right]="'10px'" class="btn2">{{i}}</a>
+           </li>
+         </ul>
+
+        </div>
+       
+
+    </div>
+  </div>
+
+</div>
